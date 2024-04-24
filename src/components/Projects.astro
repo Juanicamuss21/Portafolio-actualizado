@@ -91,17 +91,6 @@ const PROJECTS = [
     //     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.TYPESCRIPT]
     // }
 ]
-
-function openModal(index) {
-      const modal = document.getElementById(`modal-${index}`);
-      modal.style.display = 'flex';
-    }
-
-    function closeModal(index) {
-      const modal = document.getElementById(`modal-${index}`);
-      modal.style.display = 'none';
-    }
-
 ---
 
 <h3>Mis proyectos mas emocionantes y creativos. Cada proyecto es el resultado de mi dedicacion y pasion por la programacion, y estoy encantado de compartirlos contigo. Descubre como transformo ideas en realidades digitales.</h3>
@@ -153,4 +142,14 @@ function openModal(index) {
     modal?.addEventListener('click', () => {
       modal.style.display = 'none';
     });
+
+    // function openModal(index) {
+    //   const modal = document.getElementById(`modal-${index}`);
+    //   modal.style.display = 'flex';
+    // }
+
+    // function closeModal(index) {
+    //   const modal = document.getElementById(`modal-${index}`);
+    //   modal.style.display = 'none';
+    // }
   </script>
