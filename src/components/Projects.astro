@@ -1,0 +1,156 @@
+---
+import NextJSIcon from './icons/NextJSIcon.astro'
+import TailwindIcon from './icons/TailwindsIcon.astro'
+import ReactIcon from './icons/ReactIcon.astro'
+import TypecriptIcon from './icons/TypecriptIcon.astro'
+import NodeIcon from './icons/NodeIcon.astro'
+import ExpressIcon from './icons/ExpressIcon.astro'
+import SqlIcon from './icons/SqlIcon.astro'
+import CSSIcon from './icons/CSSIcon.astro'
+
+const TAGS= {
+    // NEXT: {
+    //     name: 'Next.js',
+    //     class: 'bg-black text-white',
+    //     class: '',
+    //     icon: NextJSIcon
+    // },
+    REACT: {
+        name: 'React',
+        class: '',
+        icon: ReactIcon
+    },
+    CSS: {
+        name: 'CSS',
+        class: '',
+        icon: CSSIcon
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        // class: 'bg-[#003159] text-white',
+        class: '',
+        icon: TailwindIcon
+    },
+    TYPESCRIPT: {
+        name: 'Typescript',
+        class: '',
+        icon: TypecriptIcon
+    },
+    NODE: {
+        name: 'Node',
+        class: '',
+        icon: NodeIcon
+    },
+    EXPRESS: {
+        name: 'Express',
+        class: '',
+        icon: ExpressIcon
+    },
+    POSTGRESQL: {
+        name: 'PostgreSQL',
+        class: '',
+        icon: SqlIcon
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Project 1',
+        rol: 'FULLSTACK',
+        description: 'lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos. Lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos.',
+        link: 'https://svgl.vercel.app/',
+        github: '#',
+        image: '/projects/svg-clinica.webp',
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.TYPESCRIPT]
+    },
+    {
+        title: 'Project 2',
+        rol: 'FRONTEND',
+        description: 'lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos. Lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos.',
+        link: 'https://svgl.vercel.app/',
+        github: '#',
+        image: '/projects/svg-courses-app.webp',
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.TYPESCRIPT]
+    },
+    // {
+    //     title: 'Project 3',
+    //     rol: 'BACKEND',
+    //     description: 'lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos. Lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos.',
+    //     link: 'https://svgl.vercel.app/',
+    //     github: '#',
+    //     image: '/projects/svgl.webp',
+    //     tags: [TAGS.REACT, TAGS.CSS, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.TYPESCRIPT]
+    // },
+    // {
+    //     title: 'Project 4',
+    //     rol: 'BACKEND',
+    //     description: 'lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos. Lorem ipsum texto de relleno que dice cualquier cosa con tal de rellenar un poco los parrafos.',
+    //     link: 'https://svgl.vercel.app/',
+    //     github: '#',
+    //     image: '/projects/svgl.webp',
+    //     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.TYPESCRIPT]
+    // }
+]
+
+function openModal(index) {
+      const modal = document.getElementById(`modal-${index}`);
+      modal.style.display = 'flex';
+    }
+
+    function closeModal(index) {
+      const modal = document.getElementById(`modal-${index}`);
+      modal.style.display = 'none';
+    }
+
+---
+
+<h3>Mis proyectos mas emocionantes y creativos. Cada proyecto es el resultado de mi dedicacion y pasion por la programacion, y estoy encantado de compartirlos contigo. Descubre como transformo ideas en realidades digitales.</h3>
+
+{
+    PROJECTS.map(({title, rol, description, link, github, image, tags}, index) => (
+        <section class="flex items-center gap-x-6 py-10">
+            <div class="flex flex-col">
+                <h3 class="text-[#518eeb]">{rol}</h3>
+                <h3 class="text-2xl font-semibold my-2">{title}</h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-2 py-2 flex-wrap">
+                    {
+                        tags.map(tag => (
+                            <li>
+                                <span class={`text-xs py-1 px-2 flex gap-x-1 rounded-full justify-center ${tag.class}`}>
+                                    <tag.icon class="size-4"/>
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div class="cursor-pointer rounded shadow-2xl shadow-white/10 w-8/12 h-60 overflow-y-scroll" id="projectImageContainer">
+                <img loading="lazy" src={image} alt="captura de pantalla del proyecto" id="projectImage" />
+            </div>
+
+            <div class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center" id="modal" style="display: none;">
+                <div class="w-8/12 h-[95vh] overflow-y-scroll">
+                    <img class="w-full object-contain" loading="lazy" src={image} alt="captura de pantalla del proyecto" id="modalImage" />
+                </div>
+            </div>
+            
+        </section>                                                                                              
+    ))
+}
+
+<script>
+    const projectImage = document.getElementById('projectImage');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+  
+    projectImage?.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+  
+    modal?.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>

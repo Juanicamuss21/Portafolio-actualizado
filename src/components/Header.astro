@@ -1,0 +1,35 @@
+---
+import MenuIcon from './icons/MenuIcon.astro'
+
+// const menuToggle = document.getElementById('menuToggle');
+//   const menu = document.getElementById('menu');
+
+//   menuToggle?.addEventListener('click', () => {
+//     menu?.classList.toggle('hidden');
+//   });
+---
+
+<header class="flex justify-center items-center w-full py-5">
+    <!-- <a href="#" class="text-lg font-bold">Mi Sitio Web</a> -->
+    <button id="menuToggle" class="md:hidden fixed top-5 right-5">
+      <MenuIcon class="w-6 h-6" />
+    </button>
+
+    <nav id="menu" class="md:flex hidden md:static fixed bg-black md:bg-transparent top-10 right-5 px-5 py-4 md:p-0 rounded-lg shadow-lg z-10">
+      <ul class="flex flex-col md:flex-row gap-4 md:gap-8">
+        <li><a href="#top" class="hover:underline hover:text-[#518eeb]">Inicio</a></li>
+        <li><a href="#experiencia" class="hover:underline hover:text-[#518eeb]">Experiencia</a></li>
+        <li><a href="#proyectos" class="hover:underline hover:text-[#518eeb]">Proyectos</a></li>
+        <li><a href="#sobre-mi" class="hover:underline hover:text-[#518eeb]">Sobre mí</a></li>
+        <li><a href="#contacto" class="hover:underline hover:text-[#518eeb]">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    menuToggle?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  </script>

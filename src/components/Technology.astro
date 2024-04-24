@@ -1,0 +1,133 @@
+---
+import HTMLIcon from "./icons/HTMLIcon.astro"
+import CSSIcon from "./icons/CSSIcon.astro"
+import JavascriptIcon from "./icons/JavascriptIcon.astro"
+import ReactIcon from "./icons/ReactIcon.astro"
+import TypescriptIcon from "./icons/TypecriptIcon.astro"
+import TailwindsIcon from "./icons/TailwindsIcon.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+import NodeIcon from "./icons/NodeIcon.astro"
+import ExpressIcon from "./icons/ExpressIcon.astro"
+import SqlIcon from "./icons/SqlIcon.astro"
+import GitHubIcon from "./icons/GitHubIcon.astro"
+import GitIcon from "./icons/GitIcon.astro"
+import WordpressIcon from "./icons/WordpressIcon.astro"
+import FigmaIcon from "./icons/FigmaIcon.astro"
+
+const TECHS = {
+    HTML: {
+        name: 'HTML',
+        icon: HTMLIcon
+    },
+    
+    CSS: {
+        name: 'CSS',
+        icon: CSSIcon
+    },
+
+    JAVASCRIPT: {
+        name: 'Javascript',
+        icon: JavascriptIcon
+    },
+
+    REACT: {
+        name :'React',
+        icon: ReactIcon
+    },
+
+    TYPESCRIPT: {
+        name :'Typescript',
+        icon: TypescriptIcon
+    },
+
+    TAILWIND: {
+        name :'TailwindCSS',
+        icon: TailwindsIcon
+    },
+
+    ASTRO: {
+        name: 'Astro',
+        icon: AstroIcon
+    },
+
+    NODE: {
+        name: 'NodeJS',
+        icon: NodeIcon
+    },
+
+    EXPRESS: {
+        name: 'ExpressJS',
+        icon: ExpressIcon
+    },
+
+    SQL: {
+        name: 'PostgreSQL',
+        icon: SqlIcon
+    },
+
+    GITHUB: {
+        name: 'Github',
+        icon: GitHubIcon
+    },
+
+    GIT: {
+        name: 'Git',
+        icon: GitIcon
+    },
+
+    WORDPRESS: {
+        name: 'Wordpress',
+        icon: WordpressIcon
+    },
+
+    FIGMA: {
+        name: 'Figma',
+        icon: FigmaIcon
+    }
+}
+
+const SECTIONS = [
+    {
+        title: 'FRONTEND',
+        icons: [TECHS.HTML, TECHS.CSS, TECHS.JAVASCRIPT, TECHS.REACT, TECHS.TYPESCRIPT, TECHS.TAILWIND, TECHS.ASTRO]
+    },
+    {
+        title: 'BACKEND',
+        icons: [TECHS.NODE, TECHS.EXPRESS, TECHS.SQL]
+    },
+    // {
+    //     title: 'APRENDIENDO',
+    //     icons: [TECHS.HTML, TECHS.CSS, TECHS.JAVASCRIPT]
+    // },
+    {
+        title: 'HERRAMIENTAS',
+        icons: [TECHS.GITHUB, TECHS.GIT, TECHS.WORDPRESS, TECHS.FIGMA]
+    }
+]
+---
+
+<section>
+<h3>En mi viaje por el mundo del desarrollo web, he cultivado experiencia y habilidades en una variedad de tecnologias. Mi stack tecnologico incluye:</h3>
+
+<div class="flex flex-wrap justify-center py-6 gap-6">
+    {
+        SECTIONS.map(({title, icons}) => (
+            <article class="bg-[#000106] rounded-md p-3 border h-80">
+                <h2 class="pb-2 text-center text-2xl font-semibold">{title}</h2>
+                <div class="grid grid-cols-3 gap-1">
+                {
+                    icons.map(icon => (
+                    <div class="flex flex-col gap-1 items-center p-2">
+                        <icon.icon class="size-10"/>
+                        <p>{icon.name}</p>
+                    </div>
+                    ))                   
+                }
+                </div>
+            </article>
+        ))
+    }
+</div>
+
+
+</section>

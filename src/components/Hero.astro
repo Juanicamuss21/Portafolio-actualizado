@@ -1,0 +1,63 @@
+---
+import './Hero.css'
+// import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import GitHubIcon from '../components/icons/GitHubIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro'
+import SocialPill from '../components/SocialPill.astro'
+---
+
+<div class="flex items-center gap-x-4 mb-2">
+    <img id="smallImage" class="rounded-full w-20 h-20 object-cover border-white-200 border-4 cursor-pointer" src='/assets/Foto-Linkedin.png' alt="avatar photo">
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="bigImage" class="rounded-full w-64 h-64 object-cover" src='/assets/Foto-Linkedin.png' alt="avatar photo">
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-3xl md:text-[2.5rem] font-bold flex flex-row gap-x-4">
+        Hola, soy Juan Ignacio!
+      </h1>
+      <p class="pt-1">Desarrollador Fullstack</p>
+    </div>
+  </div>
+  <h2 class="text-lg text-wrap max-w-[700px]">
+    <span>Apasionado desarrollador.</span>
+    <span class="text-yellow-200/90 opacity-80"> Desarrollador Web Full Stack.</span>
+    <span class="text-red-200/90"> Curiosidad y Aprendizaje Constante.</span>
+    <span class="opacity-75">Especializado en el desarrollo de aplicaciones web únicas.</span>
+  </h2>
+  <nav class="flex gap-4 mt-8 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/juan-ignacio-camus-703102251/">
+      <LinkedInIcon class='size-4' /> Linkedin
+    </SocialPill>
+    <SocialPill href="https://github.com/Juanicamuss21">
+      <GitHubIcon class='size-4' /> GitHub
+    </SocialPill>
+    <SocialPill href="mailto:juanicamuss15@gmail.com">
+      <MailIcon class='size-4' /> Juanicamuss15@gmail.com
+    </SocialPill>
+  </nav>
+
+  <script>
+    const smallImage = document.getElementById('smallImage');
+    const modal = document.querySelector('.modal');
+    const close = document.querySelector('.close');
+
+    smallImage?.addEventListener('click', () => {
+    modal?.classList.add('show');
+    });
+
+    close?.addEventListener('click', () => {
+    modal?.classList.remove('show');
+    });
+
+    window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+        modal?.classList.remove('show');
+    }
+});
+  </script>

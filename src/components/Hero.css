@@ -1,0 +1,42 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #1b1f23;
+    margin: 5% auto;
+    max-width: 600px;
+    height: 400px;
+    position: relative;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .close {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .show {
+    display: block;
+  }

@@ -1,0 +1,39 @@
+---
+import ExperienciaItem from "./ExperienciaItem.astro"
+const EXPERIENCE = [
+    {
+        date: 'Actualmente...',
+        title: 'Portafolios Web',
+        description: 'Diseñé y desarrollé portafolios desde cero, asegurando que fueran completamente responsivos tanto en inglés como en español. En estos proyectos, destaco mi capacidad para mejorar significativamente la interfaz, contribuyendo a una experiencia de usuario más satisfactoria.',
+        link: '/'
+    },
+    {
+        date: 'Marzo 2023',
+        title: 'Clinica App',
+        description: 'Proyecto que consistió en el diseño y desarrollo de un sitio web personalizado para una destacada neonatóloga. Fuí responsable de implementar un formulario en el sitio, permitiendo a los pacientes programar citas directamente a través de la plataforma y garantizar que estas se sincronicen automáticamente en el calendario de Google tanto de la doctora como de los pacientes, lo que permitio mejorar mi capacidad en la integración de apis.',
+        link: '/'
+    },
+    {
+        date: 'Febrero 2023',
+        title: 'Courses App',
+        description: 'Proyecto realizado con el proposito de organizar los cursos y facilitar al usuario el aprendizaje de desarrollado web, que incluía: búsquedas, filtrados y creación. Logre adquirir la habilidad para desarrollar sitios web responsivos y a desarrollar la capacidad de desenvolverme ante los diversos conflictos que se me planteaban.',
+        link: '/'
+    },
+    {
+        date: 'Enero 2023',
+        title: 'Tienda online',
+        description: 'Diseñar y desarrollar una App de venta de componentes gaming que incluía: búsquedas, filtrados,Posteos, loguin, pasarella de pago, dashboard y envio de emails. Uno de los logros más destacadosde este proyecto fue mi primera experiencia en la metodología Scrum, que permitió una gestiónmás eficiente del trabajo en equipo y una mayor adaptabilidad a los cambios en el proceso dedesarrollo. Asi como tambien la oportunidad de sumergirme en el mundo del diseño web utilizandola herramienta Figma.',
+        link: '/'
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">      
+    {
+        EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienciaItem {...experience}/>
+        </li>
+        ))
+    }
+</ol>
+
