@@ -1,66 +1,80 @@
 ---
-import './Hero.css'
+import "./Hero.css";
 // import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIcon.astro';
-import MailIcon from '../components/icons/MailIcon.astro'
-import SocialPill from '../components/SocialPill.astro'
-import FotoLinkedin from '../../assets/Foto-Linkedin.png'
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+// import FotoLinkedin from '../../assets/Foto-Linkedin.png'
+import FotoLinkedin from "../../assets/cv foto juani 1.jpg";
 ---
 
 <div class="flex items-center gap-x-4 mb-2">
-    <img id="smallImage" class="rounded-full w-20 h-20 object-cover border-white-200 border-4 cursor-pointer" src={FotoLinkedin.src} alt="Mi foto de perfil">
+  <img
+    id="smallImage"
+    class="rounded-full w-24 h-24 object-cover border-white-200 border-2 cursor-pointer"
+    src={FotoLinkedin.src}
+    alt="Mi foto de perfil"
+  />
 
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img id="bigImage" class="rounded-full w-44 h-44 md:w-64 md:h-64 object-cover" src={FotoLinkedin.src} alt="Mi foto de perfil">
-      </div>
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img
+        id="bigImage"
+        class="rounded-full w-44 h-44 md:w-64 md:h-64 object-cover"
+        src={FotoLinkedin.src}
+        alt="Mi foto de perfil"
+      />
     </div>
+  </div>
 
-    <div>
-      <h1 class="text-3xl md:text-[2.5rem] font-bold flex flex-row gap-x-4">
-        Hola, soy Juan Ignacio!
-      </h1>
-      <p class="pt-1">Desarrollador Fullstack</p>
-    </div>
+  <div>
+    <h1 class="text-3xl md:text-[2.5rem] font-bold flex flex-row gap-x-4">
+      ¡Hola! Soy Juan Ignacio Camus
+    </h1>
+    <p class="pt-1 text-yellow-200">Desarrollador Fullstack</p>
+  </div>
 </div>
 
-  <h2 class="text-lg text-wrap max-w-[700px]">
-    <span>Apasionado desarrollador.</span>
-    <span class="text-yellow-200/90 opacity-80"> Desarrollador Web Full Stack.</span>
-    <span class="text-red-200/90"> Curiosidad y Aprendizaje Constante.</span>
-    <span class="opacity-75">Especializado en el desarrollo de aplicaciones web únicas.</span>
-  </h2>
+<h2 class="text-lg text-wrap max-w-[700px]">
+  <span class="text-[#FFD1DC]/90">Apasionado desarrollador web.</span>
+  <span class="text-yellow-200/90 opacity-80"> +3 años de experiencia.</span>
+  <span>Innovación y soluciones digitales.</span>
+  <span class="text-[#B2F2BB] opacity-80">Trabajo en equipo.</span>
+  <span class="text-[#A2DDF0] opacity-75">
+    Curiosidad y Aprendizaje Constante.</span
+  >
+</h2>
 
-  <nav class="flex gap-4 mt-8 flex-wrap">
-    <SocialPill href="https://www.linkedin.com/in/juan-ignacio-camus-703102251/">
-      <LinkedInIcon class='size-4' /> Linkedin
-    </SocialPill>
-    <SocialPill href="https://github.com/Juanicamuss21">
-      <GitHubIcon class='size-4' /> GitHub
-    </SocialPill>
-    <SocialPill href="mailto:juanicamuss15@gmail.com">
-      <MailIcon class='size-4' /> Juanicamuss15@gmail.com
-    </SocialPill>
-  </nav>
+<nav class="flex gap-4 mt-8 flex-wrap">
+  <SocialPill href="https://www.linkedin.com/in/juan-ignacio-camus-703102251/">
+    <LinkedInIcon class="size-4" /> Linkedin
+  </SocialPill>
+  <SocialPill href="https://github.com/Juanicamuss21">
+    <GitHubIcon class="size-4" /> GitHub
+  </SocialPill>
+  <SocialPill href="mailto:juanicamuss15@gmail.com">
+    <MailIcon class="size-4" /> Juanicamuss15@gmail.com
+  </SocialPill>
+</nav>
 
-  <script>
-    const smallImage = document.getElementById('smallImage');
-    const modal = document.querySelector('.modal');
-    const close = document.querySelector('.close');
+<script>
+  const smallImage = document.getElementById("smallImage");
+  const modal = document.querySelector(".modal");
+  const close = document.querySelector(".close");
 
-    smallImage?.addEventListener('click', () => {
-    modal?.classList.add('show');
-    });
+  smallImage?.addEventListener("click", () => {
+    modal?.classList.add("show");
+  });
 
-    close?.addEventListener('click', () => {
-    modal?.classList.remove('show');
-    });
+  close?.addEventListener("click", () => {
+    modal?.classList.remove("show");
+  });
 
-    window.addEventListener('click', (event) => {
+  window.addEventListener("click", (event) => {
     if (event.target == modal) {
-        modal?.classList.remove('show');
+      modal?.classList.remove("show");
     }
-});
-  </script>
+  });
+</script>

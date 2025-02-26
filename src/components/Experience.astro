@@ -1,39 +1,142 @@
 ---
-import ExperienciaItem from "./ExperienciaItem.astro"
-const EXPERIENCE = [
-    {
-        date: 'Actualmente...',
-        title: 'Portafolios Web',
-        description: 'Diseñé y desarrollé portafolios desde cero, asegurando que fueran completamente responsivos tanto en inglés como en español. En estos proyectos, destaco mi capacidad para mejorar significativamente la interfaz, contribuyendo a una experiencia de usuario más satisfactoria.',
-        link: '/'
-    },
-    {
-        date: 'Marzo 2023',
-        title: 'Clinica App',
-        description: 'Proyecto que consistió en el diseño y desarrollo de un sitio web personalizado para una destacada neonatóloga. Fuí responsable de implementar un formulario en el sitio, permitiendo a los pacientes programar citas directamente a través de la plataforma y garantizar que estas se sincronicen automáticamente en el calendario de Google tanto de la doctora como de los pacientes, lo que permitio mejorar mi capacidad en la integración de apis.',
-        link: '/'
-    },
-    {
-        date: 'Febrero 2023',
-        title: 'Courses App',
-        description: 'Proyecto realizado con el proposito de organizar los cursos y facilitar al usuario el aprendizaje de desarrollado web, que incluía: búsquedas, filtrados y creación. Logre adquirir la habilidad para desarrollar sitios web responsivos y a desarrollar la capacidad de desenvolverme ante los diversos conflictos que se me planteaban.',
-        link: '/'
-    },
-    {
-        date: 'Enero 2023',
-        title: 'Tienda online',
-        description: 'Diseñar y desarrollar una App de venta de componentes gaming que incluía: búsquedas, filtrados,Posteos, loguin, pasarella de pago, dashboard y envio de emails. Uno de los logros más destacadosde este proyecto fue mi primera experiencia en la metodología Scrum, que permitió una gestiónmás eficiente del trabajo en equipo y una mayor adaptabilidad a los cambios en el proceso dedesarrollo. Asi como tambien la oportunidad de sumergirme en el mundo del diseño web utilizandola herramienta Figma.',
-        link: '/'
-    }
-]
----
-<ol class="relative border-s border-gray-200 ml-3">      
-    {
-        EXPERIENCE.map(experience => (
-        <li class="mb-10 ms-4">
-            <ExperienciaItem {...experience}/>
-        </li>
-        ))
-    }
-</ol>
+// import NextJSIcon from "./icons/NextJSIcon.astro";
+import TailwindIcon from "./icons/TailwindsIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import TypecriptIcon from "./icons/TypecriptIcon.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
+import ExpressIcon from "./icons/ExpressIcon.astro";
+import SqlIcon from "./icons/SqlIcon.astro";
+import CSSIcon from "./icons/CSSIcon.astro";
+import JavascriptIcon from "./icons/JavascriptIcon.astro";
 
+import ExperienciaItem from "./ExperienciaItem.astro";
+
+const TAGS = {
+  // NEXT: {
+  //     name: 'Next.js',
+  //     class: 'bg-black text-white',
+  //     class: '',
+  //     icon: NextJSIcon
+  // },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "",
+    icon: JavascriptIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "",
+    icon: ReactIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "",
+    icon: CSSIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    // class: 'bg-[#003159] text-white',
+    class: "",
+    icon: TailwindIcon,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "",
+    icon: TypecriptIcon,
+  },
+  NODE: {
+    name: "Node",
+    class: "",
+    icon: NodeIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "",
+    icon: ExpressIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "",
+    icon: SqlIcon,
+  },
+};
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Plataforma de Reservas para Salones de Eventos",
+    description:
+      "Lideré el desarrollo de un sistema de reservas para salones de eventos y talleres, diseñado para optimizar la gestión de reservas y mejorar la experiencia del usuario. Implementé la integración de pagos seguros a través de Stripe, facilitando transacciones fluidas y confiables para los usuarios. Además, desarrollé un panel de administración personalizado que permite a la clienta gestionar reservas, aplicar cupones de descuento y monitorear métricas clave. Para mejorar la comunicación, integré un sistema de notificaciones automatizadas que envía correos electrónicos tanto a los clientes como al administrador con todos los detalles de la reserva una vez confirmado el pago.",
+    link: "https://espacioenblanco.netlify.app",
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.REACT,
+      TAGS.CSS,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+    ],
+  },
+  {
+    date: "Septiembre 2024",
+    title: "Plataforma para Gestión de Turnos Médicos (Trabajo en Equipo)",
+    description:
+      "Colaboré en el desarrollo de un sitio web para una médica pediatra-neonatóloga, fortaleciendo habilidades como trabajo en equipo, comunicación efectiva y resolución de problemas. Implementé un sistema de reservas integrado con Google Calendar, un panel de control para gestionar citas médicas (aprobando o rechazando turnos) y una funcionalidad de horarios dinámicos que permite a la doctora definir su disponibilidad, optimizando la experiencia tanto para ella como para sus pacientes.",
+    link: "https://website-to-take-appointments-git-main-villares09s-projects.vercel.app/home",
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.REACT,
+      TAGS.CSS,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+    ],
+  },
+  {
+    date: "junio 2024",
+    title: "Diseño y Desarrollo Web para Agencia Local de Marketing",
+    description:
+      "Colaboré con una agencia local de marketing en el desarrollo de una plataforma moderna y funcional que reflejara su identidad y servicios. Diseñé y desarrollé una interfaz intuitiva, responsive y minimalista, priorizando la experiencia del usuario y un estilo visual atractivo. Implementé una página principal impactante que destaca la identidad y valores de la agencia, una sección de servicios detallada, una cartelera visual de proyectos destacados y un formulario de contacto funcional que facilita la comunicación directa con los clientes.",
+    link: "https://devvision.netlify.app",
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.REACT,
+      TAGS.CSS,
+      TAGS.TAILWIND,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+    ],
+  },
+  {
+    date: "Febrero 2024",
+    title: "Tienda Online de Componentes Gaming (Trabajo en Equipo)",
+    description:
+      "Colaboré en el desarrollo de Dreams Factory, una tienda online especializada en la venta de componentes gaming, donde fortalecí habilidades esenciales al trabajar en equipo, como la comunicación efectiva, la distribución de tareas, la resolución colaborativa de problemas y la adaptabilidad para integrar ideas y soluciones de otros desarrolladores. Este proyecto me permitió crecer profesionalmente mientras contribuía a crear una plataforma funcional y centrada en el usuario. Implementé un carrito de compras para gestionar productos, un sistema de favoritos para guardar artículos de interés y la integración con Mercado Pago para facilitar pagos seguros y fluidos. Además, desarrollé un sistema de notificaciones por correo electrónico para confirmaciones de compra y actualizaciones, junto con un sistema de login que incluye registro, autenticación e inicio de sesión con Google. Para mejorar la experiencia del usuario, integré un filtrado por categorías y un subfiltrado avanzado que permite organizar productos por precio, rating y ordenamiento (de menor a mayor).",
+    link: "https://dreams-factory-pf.vercel.app/",
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.REACT,
+      TAGS.CSS,
+      TAGS.TAILWIND,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+    ],
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienciaItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
